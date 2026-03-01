@@ -35,7 +35,8 @@
     { href: '/',                       label: 'Home' },
     { href: '/send-rights-ai-helper/', label: 'SEND Rights AI Helper' },
     { href: '/resources.html',         label: 'Resources' },
-    { href: '/lived-experience.html',  label: 'Lived Experience' }
+    { href: '/out-loud.html',          label: 'Out Loud' },
+    { href: '/about.html',             label: 'About & Contact' }
   ];
 
   // Work out which page we're on for aria-current
