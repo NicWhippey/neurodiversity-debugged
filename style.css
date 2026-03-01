@@ -1,20 +1,20 @@
-/* === SEND Rights Helper — Site Styles === */
+/* === Neurodiversity Debugged — Site Styles === */
 /* Designed for exhausted parents. Large text, high contrast, calm colours, no clutter. */
 
 :root {
-  --primary: #8B2252;
-  --primary-light: #f5e8ef;
-  --primary-dark: #5C1637;
-  --accent: #d4a847;
-  --text: #1a1a1a;
-  --text-light: #555;
+  --primary: #512040;          /* Aubergine (≈9.5:1 on white ✓ AAA) */
+  --primary-light: #EDEAED;    /* Cool grey-mauve wash — no pink */
+  --primary-dark: #2E0F23;     /* Deep aubergine (≈16.5:1 on white ✓ AAA) */
+  --accent: #2D8C82;           /* Teal accent (≈4.1:1 on white ✓ large text) */
+  --text: #2A2A2E;             /* Near-black neutral (≈14:1 on white ✓ AAA) */
+  --text-light: #5C5660;       /* Grey-mauve, not pink (≈5.8:1 on white ✓ AA) */
   --bg: #ffffff;
-  --bg-warm: #faf6f8;
-  --border: #e3d8de;
-  --link: #8B2252;
-  --link-hover: #5C1637;
-  --danger: #b44a3f;
-  --max-width: 720px;
+  --bg-warm: #F4F3F5;          /* Cool grey off-white — not pink */
+  --border: #D4D0D6;           /* Neutral grey-mauve border */
+  --link: #512040;
+  --link-hover: #2E0F23;
+  --danger: #B8433B;           /* Clear red (≈5.0:1 on white ✓ AA) */
+  --max-width: 960px;
 }
 
 /* === Reset === */
@@ -42,15 +42,19 @@ body {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 /* === Header === */
 header {
   background: var(--primary);
   color: white;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   border-bottom: 4px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 header .container {
@@ -62,10 +66,20 @@ header .container {
 }
 
 .site-title {
-  font-size: 1.3rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.6rem;
   font-weight: 700;
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.site-logo {
+  flex-shrink: 0;
 }
 
 .site-title:hover {
@@ -219,7 +233,7 @@ main a:hover {
 /* === Cards === */
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0;
 }
@@ -267,7 +281,7 @@ main a:hover {
 
 /* === Warning box === */
 .warning {
-  background: #fef3e8;
+  background: #EAF0EF;
   border-left: 4px solid var(--accent);
   padding: 1.25rem 1.5rem;
   border-radius: 0 6px 6px 0;
