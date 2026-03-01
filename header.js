@@ -33,9 +33,9 @@
   // ── Navigation links ──
   const navLinks = [
     { href: '/',                       label: 'Home' },
-    { href: '/send-rights-ai-helper/',                  label: 'SEND Rights AI Helper' },
-    { href: '/resources.html',    label: 'Resources' },
-    { href: '/send-rights-ai-helper/privacy.html',      label: 'Privacy' }
+    { href: '/send-rights-ai-helper/', label: 'SEND Rights AI Helper' },
+    { href: '/resources.html',         label: 'Resources' },
+    { href: '/lived-experience.html',  label: 'Lived Experience' }
   ];
 
   // Work out which page we're on for aria-current
@@ -74,8 +74,7 @@
   <div class="container">
     <span>&copy; ${SITE.author} ${SITE.year} &middot; ${SITE.name}</span>
     <span>
-      <a href="/send-rights-ai-helper/privacy.html">Privacy</a> &middot;
-      <a href="${SITE.medium}">Medium</a>
+      <a href="/send-rights-ai-helper/#privacy">Privacy</a>
     </span>
   </div>
 </footer>`;
