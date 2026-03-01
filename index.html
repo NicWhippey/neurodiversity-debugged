@@ -28,34 +28,31 @@
 <main id="main">
   <div class="container">
 
-    <h2>What you&rsquo;ll find here</h2>
+    <h2>What we&rsquo;re debugging</h2>
+
+    <p>Built by a neurodivergent parent, neuroscientist, and software engineer who learned the system the hard way &mdash; and started building tools so other families don&rsquo;t have to. <a href="/about.html">Read more</a>.</p>
 
     <div class="card-grid">
       <a class="card card-link-block" href="/send-rights-ai-helper.html">
+        <span class="card-icon">&#9878;&#65039;</span>
         <h3>SEND Rights AI Helper <span style="font-size:0.75em; color:#e67e22; font-weight:normal;">&mdash; coming soon</span></h3>
-        <p>A free, trauma-informed AI guide that listens to your story, explains your legal rights in plain English, and helps you take action. Currently in testing.</p>
+        <p>A free, trauma-informed AI guide that listens to your story, explains your legal rights in plain English, and helps you take action.</p>
       </a>
       <a class="card card-link-block" href="/resources.html">
+        <span class="card-icon">&#128218;</span>
         <h3>Resources</h3>
         <p>Curated information on SEND law, neurodevelopment, education rights, and the systems families in England are expected to navigate.</p>
       </a>
       <a class="card card-link-block" href="/out-loud.html">
+        <span class="card-icon">&#9997;&#65039;</span>
         <h3>Out Loud</h3>
         <p>Real writing about neurodivergent parenting, late diagnosis, burnout, SEND battles, and the neuroscience behind it all. No filter, no polish &mdash; just the truth.</p>
       </a>
-      <a class="card card-link-block" href="/about.html">
-        <h3>About</h3>
-        <p>Why this exists and who built it. One parent with a neuroscience background and a software engineer&rsquo;s instinct to fix what&rsquo;s broken.</p>
-      </a>
-    </div>
-
-    <div class="highlight">
-      <p><strong>The SEND Rights AI Helper is in testing</strong> and will be the first tool to launch. The same approach &mdash; trauma-informed AI, led by lived experience, backed by law &mdash; can work for other systems that fail neurodivergent families: mental health, employment, benefits, housing.</p>
     </div>
 
     <h2>Latest writing</h2>
 
-    <div id="medium-articles" class="card-grid">
+    <div id="medium-articles" class="article-grid">
       <p style="text-align:center; color:#666;">Loading articles&hellip;</p>
     </div>
 
@@ -72,15 +69,13 @@
             return;
           }
           var html = data.items.slice(0, 6).map(function (item) {
-            var tmp = document.createElement('div');
-            tmp.innerHTML = item.description || item.content || '';
-            var text = tmp.textContent || tmp.innerText || '';
-            var snippet = text.substring(0, 180).trim();
-            if (text.length > 180) snippet += '\u2026';
+            var imgMatch = item.description ? item.description.match(/<img[^>]+src="([^"]+)"/) : null;
+            var imgUrl = (item.thumbnail || (imgMatch && imgMatch[1]) || '');
+            var imgHtml = imgUrl ? '<img src="' + imgUrl + '" alt="">' : '';
 
-            return '<a class="card card-link-block" href="' + item.link + '" target="_blank" rel="noopener">' +
+            return '<a class="article-card" href="' + item.link + '" target="_blank" rel="noopener">' +
+              imgHtml +
               '<h3>' + item.title + '</h3>' +
-              '<p>' + snippet + '</p>' +
               '</a>';
           }).join('');
           container.innerHTML = html;
@@ -90,10 +85,6 @@
         });
     })();
     </script>
-
-    <div class="warning">
-      <p><strong>Important:</strong> These tools are not legal advice. They are AI-generated information based on publicly available legal sources. Always verify key points with <a href="https://www.ipsea.org.uk">IPSEA</a> or a solicitor before taking formal action. <a href="/send-rights-ai-helper.html#disclaimer">Full disclaimer</a>.</p>
-    </div>
 
   </div>
 </main>
