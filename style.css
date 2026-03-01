@@ -239,8 +239,8 @@ main a:hover {
 }
 
 .card {
-  background: rgba(81, 32, 64, 0.08);
-  border: 1px solid rgba(81, 32, 64, 0.15);
+  background: rgba(81, 32, 64, 0.18); /* Deeper aubergine, less grey */
+  border: 1.5px solid rgba(81, 32, 64, 0.28);
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
