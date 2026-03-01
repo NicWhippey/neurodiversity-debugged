@@ -73,6 +73,7 @@
   const footerHTML = `<footer>
   <div class="container">
     <span>&copy; ${SITE.author} ${SITE.year} &middot; ${SITE.name}</span>
+    <span><a href="/about.html">About and contact</a></span>
   </div>
 </footer>`;
 
