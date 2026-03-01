@@ -30,29 +30,31 @@
 
     <h2>What we&rsquo;re debugging</h2>
 
-    <p>Built by a neurodivergent parent, neuroscientist, and software engineer who learned the system the hard way &mdash; and started building tools so other families don&rsquo;t have to. <a href="/about.html">Read more</a>.</p>
+    <p>The systems that are supposed to support neurodivergent families are broken. The law exists, the duties are clear, but the implementation fails &mdash; and parents are left debugging it alone, in crisis, with no manual.</p>
+
+    <p>This site is built by a neurodivergent parent, neuroscientist, and software engineer who learned the hard way and started building tools to fix it: AI that knows the law and speaks to you like a human, resources that cut through the noise, and writing that says what most people are too exhausted to put into words. <a href="/about.html">Find out more</a>.</p>
 
     <div class="card-grid">
       <a class="card card-link-block" href="/send-rights-ai-helper.html">
-        <span class="card-icon">&#9878;&#65039;</span>
         <h3>SEND Rights AI Helper <span style="font-size:0.75em; color:#e67e22; font-weight:normal;">&mdash; coming soon</span></h3>
+        <img class="card-icon" src="/icons/ai-svgrepo-com.svg" alt="">
         <p>A free, trauma-informed AI guide that listens to your story, explains your legal rights in plain English, and helps you take action.</p>
       </a>
       <a class="card card-link-block" href="/resources.html">
-        <span class="card-icon">&#128218;</span>
         <h3>Resources</h3>
+        <img class="card-icon" src="/icons/person-learning-by-reading-svgrepo-com.svg" alt="">
         <p>Curated information on SEND law, neurodevelopment, education rights, and the systems families in England are expected to navigate.</p>
       </a>
       <a class="card card-link-block" href="/out-loud.html">
-        <span class="card-icon">&#9997;&#65039;</span>
         <h3>Out Loud</h3>
+        <img class="card-icon" src="/icons/thoughts-of-gears-in-speech-bubble-svgrepo-com.svg" alt="">
         <p>Real writing about neurodivergent parenting, late diagnosis, burnout, SEND battles, and the neuroscience behind it all. No filter, no polish &mdash; just the truth.</p>
       </a>
     </div>
 
     <h2>Latest writing</h2>
 
-    <div id="medium-articles" class="article-grid">
+    <div id="medium-articles" class="article-list">
       <p style="text-align:center; color:#666;">Loading articles&hellip;</p>
     </div>
 
@@ -73,9 +75,13 @@
             var imgUrl = (item.thumbnail || (imgMatch && imgMatch[1]) || '');
             var imgHtml = imgUrl ? '<img src="' + imgUrl + '" alt="">' : '';
 
+            var subMatch = item.description ? item.description.match(/<h3[^>]*>(.*?)<\/h3>/) : null;
+            var subtitle = subMatch ? subMatch[1].replace(/<[^>]+>/g, '') : '';
+            var subHtml = subtitle ? '<p>' + subtitle + '</p>' : '';
+
             return '<a class="article-card" href="' + item.link + '" target="_blank" rel="noopener">' +
+              '<div class="article-text"><h3>' + item.title + '</h3>' + subHtml + '</div>' +
               imgHtml +
-              '<h3>' + item.title + '</h3>' +
               '</a>';
           }).join('');
           container.innerHTML = html;
