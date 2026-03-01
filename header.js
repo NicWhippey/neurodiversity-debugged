@@ -19,8 +19,7 @@
     email:  'neurodiversity.debugged@gmail.com',
     author: 'Nic Whippey',
     year:   2026,
-    name:   'Neurodiversity Debugged',
-    medium: 'https://medium.com/@nic.whippey'
+    name:   'Neurodiversity Debugged'
   };
 
   // ── Logo: { brain } with curly brackets ──
@@ -33,10 +32,10 @@
   // ── Navigation links ──
   const navLinks = [
     { href: '/',                       label: 'Home' },
-    { href: '/send-rights-ai-helper/', label: 'SEND Rights AI Helper' },
+    { href: '/send-rights-ai-helper.html', label: 'SEND Rights AI Helper' },
     { href: '/resources.html',         label: 'Resources' },
     { href: '/out-loud.html',          label: 'Out Loud' },
-    { href: '/about.html',             label: 'About & Contact' }
+    { href: '/about.html',             label: 'About' }
   ];
 
   // Work out which page we're on for aria-current
@@ -74,9 +73,6 @@
   const footerHTML = `<footer>
   <div class="container">
     <span>&copy; ${SITE.author} ${SITE.year} &middot; ${SITE.name}</span>
-    <span>
-      <a href="/send-rights-ai-helper/#privacy">Privacy</a>
-    </span>
   </div>
 </footer>`;
 
