@@ -466,8 +466,8 @@ footer a:hover {
 /* === Resources page sidebar layout === */
 .resources-layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
   align-items: start;
   margin-top: 2rem;
 }
@@ -523,7 +523,20 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* === Responsive === */
+/* Wide screens: sidebar lives in the page margin, not the content area */
+@media (min-width: 1350px) {
+  .resources-layout {
+    display: block;
+  }
+
+  .resources-nav {
+    position: fixed;
+    top: 5rem;
+    left: calc(50% - 636px);
+    width: 140px;
+  }
+}
+
 @media (max-width: 760px) {
   .resources-layout {
     grid-template-columns: 1fr;
