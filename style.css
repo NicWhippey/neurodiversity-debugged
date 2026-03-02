@@ -1,6 +1,8 @@
 /* === Neurodiversity Debugged — Site Styles === */
 /* Designed for exhausted parents. Large text, high contrast, calm colours, no clutter. */
 
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --primary: #512040;          /* Aubergine (≈9.5:1 on white ✓ AAA) */
   --primary-light: #EDEAED;    /* Cool grey-mauve wash — no pink */
@@ -31,7 +33,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.7;
@@ -180,8 +182,15 @@ main {
 main h1 {
   font-size: 1.8rem;
   color: var(--primary-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
 main h2 {
