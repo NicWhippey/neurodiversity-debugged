@@ -239,8 +239,8 @@ main a:hover {
 }
 
 .card {
-  background: rgba(81, 32, 64, 0.32); /* Stronger aubergine, more purple */
-  border: 1.5px solid rgba(81, 32, 64, 0.38);
+  background: #F3EAF4; /* Accessible pale purple background */
+  border: 1.5px solid #512040;
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
@@ -255,7 +255,7 @@ main a:hover {
 
 .card p {
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--primary-dark); /* Higher contrast for accessibility */
   margin-bottom: 0.75rem;
   text-align: left;
 }
