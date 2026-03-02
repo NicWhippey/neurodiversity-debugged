@@ -110,7 +110,7 @@ nav a[aria-current="page"] {
 
 /* === Hero === */
 .hero {
-  background: var(--primary-light);
+  background: #F8F6FA; /* Lighter, less saturated, more distinct from cards */
   padding: 3rem 0;
   border-bottom: 1px solid var(--border);
 }
@@ -239,8 +239,8 @@ main a:hover {
 }
 
 .card {
-  background: rgba(81, 32, 64, 0.18); /* Deeper aubergine, less grey */
-  border: 1.5px solid rgba(81, 32, 64, 0.28);
+  background: rgba(81, 32, 64, 0.32); /* Stronger aubergine, more purple */
+  border: 1.5px solid rgba(81, 32, 64, 0.38);
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
