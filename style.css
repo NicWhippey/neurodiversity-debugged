@@ -480,6 +480,10 @@ footer a:hover {
   border-radius: 8px;
   padding: 1.25rem;
   border: 1px solid var(--border);
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+  min-width: 180px;
+  box-sizing: border-box;
 }
 
 .resources-nav-heading {

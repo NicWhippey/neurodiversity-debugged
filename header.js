@@ -32,7 +32,7 @@
   // ── Navigation links ──
   const navLinks = [
     { href: '/',                       label: 'Home' },
-    { href: '/send-rights-ai-helper.html', label: 'SEND Rights AI Helper' },
+    { href: '/neurodiversity-decoded.html', label: 'Neurodiversity Decoded — AI support' },
     { href: '/resources.html',         label: 'Resources' },
     { href: '/out-loud.html',          label: 'Out Loud' },
     { href: '/about.html',             label: 'About' }
