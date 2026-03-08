@@ -32,8 +32,24 @@
   // ── Navigation links ──
   const navLinks = [
     { href: '/',                       label: 'Home' },
-    { href: '/neurodiversity-decoded.html', label: 'Neurodiversity Decoded — AI support' },
-    { href: '/resources.html',         label: 'Resources' },
+    { href: '/neurodiversity-decoded.html', label: 'Neurodiversity Decoded' },
+    { 
+      href: '/resources.html',
+      label: 'Resources',
+      submenu: [
+        { href: '/resources.html#crisis-entry', label: 'Crisis support' },
+        { href: '/resources.html#make-sense', label: 'Make sense of SEND' },
+        { href: '/resources.html#when-standard-approaches-arent-working', label: "When standard approaches aren't working" },
+        { href: '/resources.html#therapeutic-approaches', label: 'Therapeutic approaches' },
+        { href: '/resources.html#school-avoidance', label: 'School avoidance' },
+        { href: '/resources.html#looking-after-yourself', label: 'Looking after yourself' },
+        { href: '/resources.html#money-support', label: 'Money & everyday support' },
+        { href: '/resources.html#legal-help', label: 'Where to go for legal help' },
+        { href: '/resources.html#complaints', label: 'Complaints & escalation' },
+        { href: '/resources.html#mp', label: 'Find your MP' },
+        { href: '/resources.html#local-support', label: 'Local support - Bristol examples' }
+      ]
+    },
     { href: '/out-loud.html',          label: 'Out Loud' },
     { href: '/about.html',             label: 'About' }
   ];
@@ -44,9 +60,21 @@
   const navHTML = navLinks.map(function (link) {
     const linkPath = link.href.replace(/index\.html$/, '');
     const isCurrent = path === linkPath;
-    return '<a href="' + link.href + '"' +
-      (isCurrent ? ' aria-current="page"' : '') +
-      '>' + link.label + '</a>';
+    if (link.submenu) {
+      // Dropdown menu for Resources
+      return `
+        <div class="nav-dropdown">
+          <a href="${link.href}"${isCurrent ? ' aria-current="page"' : ''}>${link.label}</a>
+          <div class="dropdown-menu">
+            ${link.submenu.map(item => `<a href="${item.href}">${item.label}</a>`).join('')}
+          </div>
+        </div>
+      `;
+    } else {
+      return '<a href="' + link.href + '"' +
+        (isCurrent ? ' aria-current="page"' : '') +
+        '>' + link.label + '</a>';
+    }
   }).join('\n      ');
 
   // ── Header ──

@@ -1,3 +1,7 @@
+.resources-content {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
 /* === Neurodiversity Debugged — Site Styles === */
 /* Designed for exhausted parents. Large text, high contrast, calm colours, no clutter. */
 
@@ -16,7 +20,7 @@
   --link: #512040;
   --link-hover: #2E0F23;
   --danger: #B8433B;           /* Clear red (≈5.0:1 on white ✓ AA) */
-  --max-width: 60rem;
+  --max-width: 960px;
 }
 
 /* === Reset === */
@@ -28,7 +32,7 @@
 
 /* === Base === */
 html {
-  font-size: 1.125rem;
+  font-size: 18px;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
@@ -70,7 +74,7 @@ header .container {
 
 .site-title {
   font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 1.6rem;
+    font-size: 1.6rem;
   font-weight: 700;
   color: white;
   text-decoration: none;
@@ -95,6 +99,53 @@ nav {
   flex-wrap: wrap;
 }
 
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropdown > a {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  min-width: 260px;
+  z-index: 1002;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-warm);
+  color: var(--primary-dark);
+}
+
 nav a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
@@ -114,9 +165,9 @@ nav a[aria-current="page"] {
 /* === Hero === */
 .hero {
   background: #F8F6FA; /* Lighter, less saturated, more distinct from cards */
-  padding: 1rem 0;
-  border-bottom: 0.25rem solid var(--accent);
-  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.15);
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border);
+}
 
 .hero h1 {
   font-size: 2rem;
@@ -482,7 +533,7 @@ footer a:hover {
   border: 1px solid var(--border);
   height: calc(100vh - 5rem);
   overflow-y: auto;
-  min-width: 10rem;
+  min-width: 12rem;
   box-sizing: border-box;
 }
 
@@ -538,7 +589,7 @@ footer a:hover {
       position: fixed;
       top: 5rem;
       left: 0;
-      width: 14rem;
+      width: 220px;
     }
 }
 
@@ -578,7 +629,6 @@ footer a:hover {
   .resources-nav.open {
     transform: translateX(0);
   }
-}
 }
 
 @media (max-width: 600px) {
