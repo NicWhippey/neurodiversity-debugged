@@ -37,7 +37,7 @@
       href: '/resources.html',
       label: 'Resources',
       submenu: [
-        { href: '/resources.html#crisis-entry', label: 'Crisis support' },
+        { href: '/resources.html#crisis-support', label: 'Crisis support' },
         { href: '/resources.html#make-sense', label: 'Make sense of SEND' },
         { href: '/resources.html#when-standard-approaches-arent-working', label: "When standard approaches aren't working" },
         { href: '/resources.html#therapeutic-approaches', label: 'Therapeutic approaches' },
