@@ -16,7 +16,7 @@
   --link: #512040;
   --link-hover: #2E0F23;
   --danger: #B8433B;           /* Clear red (≈5.0:1 on white ✓ AA) */
-  --max-width: 960px;
+  --max-width: 60rem;
 }
 
 /* === Reset === */
@@ -28,7 +28,7 @@
 
 /* === Base === */
 html {
-  font-size: 18px;
+  font-size: 1.125rem;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
@@ -114,9 +114,9 @@ nav a[aria-current="page"] {
 /* === Hero === */
 .hero {
   background: #F8F6FA; /* Lighter, less saturated, more distinct from cards */
-  padding: 3rem 0;
-  border-bottom: 1px solid var(--border);
-}
+  padding: 1rem 0;
+  border-bottom: 0.25rem solid var(--accent);
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.15);
 
 .hero h1 {
   font-size: 2rem;
@@ -482,7 +482,7 @@ footer a:hover {
   border: 1px solid var(--border);
   height: calc(100vh - 5rem);
   overflow-y: auto;
-  min-width: 180px;
+  min-width: 10rem;
   box-sizing: border-box;
 }
 
@@ -534,22 +534,51 @@ footer a:hover {
     display: block;
   }
 
-  .resources-nav {
-    position: fixed;
-    top: 5rem;
-    left: calc(50% - 636px);
-    width: 140px;
-  }
+    .resources-nav {
+      position: fixed;
+      top: 5rem;
+      left: 0;
+      width: 14rem;
+    }
 }
 
 @media (max-width: 760px) {
   .resources-layout {
     grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.25em 0.5em;
+    border-radius: 0.5em;
+    z-index: 1001;
   }
 
   .resources-nav {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80vw;
+    max-width: 20rem;
+    background: var(--bg-warm);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
   }
+  .resources-nav.open {
+    transform: translateX(0);
+  }
+}
 }
 
 @media (max-width: 600px) {
