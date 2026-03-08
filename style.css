@@ -207,6 +207,7 @@ nav a[aria-current="page"] {
 
 .btn-primary:hover {
   background: var(--primary-dark);
+  color: white;
 }
 
 .btn-secondary {
