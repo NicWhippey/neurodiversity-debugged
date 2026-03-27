@@ -810,6 +810,17 @@ footer a:hover {
   margin-bottom: 1.25rem;
 }
 
+.tool-details h4 {
+  padding: 0 1.25rem;
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+}
+
+.tool-details h4:first-of-type {
+  margin-top: 1rem;
+}
+
 /* === Prompt viewer === */
 .prompt-viewer {
   border: 1.5px solid var(--border);
