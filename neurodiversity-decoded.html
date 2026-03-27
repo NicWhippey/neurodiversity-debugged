@@ -37,86 +37,121 @@
       <p><strong>Before you use any tool:</strong> Please read the <a href="#disclaimer">disclaimer</a> and <a href="#privacy">privacy notice</a>. These tools are not legal advice &mdash; they produce AI-generated content that may contain errors. Always review and verify before submitting anything.</p>
     </div>
 
-    <h3 id="ehcna-prompt">EHCNA Request AI Prompt</h3>
+    <div class="tool-card">
+      <h3 id="ehcna-prompt" class="tool-card-title">EHCNA Request AI Prompt</h3>
+      <p class="tool-card-subtitle">Helps you write the Reason for Request and Family Views</p>
 
-    <p><strong>What it does:</strong> This AI prompt helps you write the two hardest parts of an EHCNA (Education, Health and Care Needs Assessment) request &mdash; the <strong>Reason for Request</strong> and the <strong>Family Views</strong>. It guides the AI through a structured conversation about your child, your experiences, and what has been tried, then produces clear, evidence-based writing grounded in SEND law.</p>
-
-    <p>If you are in crisis, time poor, exhausted, or just struggling to get everything down on paper &mdash; this is for you. Sometimes you know everything that needs saying but you cannot find the words, or the structure, or the energy. This prompt does the heavy lifting so you can focus on what matters.</p>
-
-    <h4>How to use it</h4>
-
-    <ol>
-      <li><strong>Copy the prompt</strong> &mdash; use the &ldquo;Copy prompt&rdquo; button below to copy the full prompt text to your clipboard.</li>
-      <li><strong>Open an AI chat</strong> &mdash; I personally think Claude Sonnet works best for this (it is what the prompt was designed for), but ChatGPT or similar should also work. <a href="#never-used-ai">Never used AI before? Read this first.</a></li>
-      <li><strong>Paste the entire prompt</strong> into the AI chat as your first message. The prompt contains all the instructions the AI needs.</li>
-      <li><strong>Answer the questions</strong> &mdash; the AI will walk you through a structured conversation about your child, stage by stage. Just talk. It will ask the right questions.</li>
-      <li><strong>Review the output</strong> &mdash; the AI will produce a Reason for Request and Family Views document. <strong>You must read it carefully and check everything before submitting.</strong> The AI may get facts wrong, miss things, or phrase something in a way that does not reflect your situation accurately.</li>
-    </ol>
-
-    <div class="prompt-viewer">
-      <div class="prompt-viewer-header">
-        <span class="prompt-viewer-title">EHCNA Writing Assistant &mdash; AI Prompt</span>
-        <button class="btn btn-primary btn-copy" id="copy-prompt-btn" type="button">Copy prompt</button>
+      <div class="tool-card-section">
+        <h4>What it does</h4>
+        <p>This AI prompt helps you write the two hardest parts of an EHCNA (Education, Health and Care Needs Assessment) request &mdash; the <strong>Reason for Request</strong> and the <strong>Family Views</strong>.</p>
+        <p>It guides the AI through a structured conversation about your child, your experiences, and what has been tried, then produces clear, evidence-based writing grounded in SEND law.</p>
       </div>
-      <pre class="prompt-viewer-content" id="prompt-content"></pre>
-    </div>
 
-    <script>
-    (function () {
-      fetch('/neurodiversity-decoded/EHCNA_AI_PROMPT.txt')
-        .then(function (res) { return res.text(); })
-        .then(function (text) {
-          document.getElementById('prompt-content').textContent = text;
-        })
-        .catch(function () {
-          document.getElementById('prompt-content').textContent = 'Could not load prompt. Please try refreshing the page.';
+      <div class="tool-card-section">
+        <h4>How to use it</h4>
+        <div class="tool-steps">
+          <div class="tool-step">
+            <span class="tool-step-number">1</span>
+            <div>
+              <strong>Copy the prompt</strong>
+              <p>Use the &ldquo;Copy prompt&rdquo; button below.</p>
+            </div>
+          </div>
+          <div class="tool-step">
+            <span class="tool-step-number">2</span>
+            <div>
+              <strong>Open an AI chat</strong>
+              <p>I personally think Claude Sonnet works best (it is what the prompt was designed for), but ChatGPT or similar should also work. <a href="#never-used-ai">Never used AI before?</a></p>
+            </div>
+          </div>
+          <div class="tool-step">
+            <span class="tool-step-number">3</span>
+            <div>
+              <strong>Paste the entire prompt</strong>
+              <p>Paste it as your first message. It contains all the instructions the AI needs.</p>
+            </div>
+          </div>
+          <div class="tool-step">
+            <span class="tool-step-number">4</span>
+            <div>
+              <strong>Answer the questions</strong>
+              <p>The AI will walk you through a structured conversation. Just talk. It will ask the right questions.</p>
+            </div>
+          </div>
+          <div class="tool-step">
+            <span class="tool-step-number">5</span>
+            <div>
+              <strong>Review the output carefully</strong>
+              <p>The AI may get facts wrong, miss things, or phrase something inaccurately. <strong>Check everything before submitting.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prompt-viewer">
+        <div class="prompt-viewer-header">
+          <span class="prompt-viewer-title">EHCNA Writing Assistant &mdash; AI Prompt (v1.0)</span>
+          <button class="btn btn-primary btn-copy" id="copy-prompt-btn" type="button">Copy prompt</button>
+        </div>
+        <pre class="prompt-viewer-content" id="prompt-content"></pre>
+      </div>
+
+      <script>
+      (function () {
+        fetch('/neurodiversity-decoded/EHCNA_AI_PROMPT.txt')
+          .then(function (res) { return res.text(); })
+          .then(function (text) {
+            document.getElementById('prompt-content').textContent = text;
+          })
+          .catch(function () {
+            document.getElementById('prompt-content').textContent = 'Could not load prompt. Please try refreshing the page.';
+          });
+
+        document.getElementById('copy-prompt-btn').addEventListener('click', function () {
+          var btn = this;
+          var content = document.getElementById('prompt-content').textContent;
+          navigator.clipboard.writeText(content).then(function () {
+            btn.textContent = 'Copied!';
+            btn.classList.add('btn-copied');
+            setTimeout(function () {
+              btn.textContent = 'Copy prompt';
+              btn.classList.remove('btn-copied');
+            }, 2000);
+          }).catch(function () {
+            var textarea = document.createElement('textarea');
+            textarea.value = content;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            btn.textContent = 'Copied!';
+            btn.classList.add('btn-copied');
+            setTimeout(function () {
+              btn.textContent = 'Copy prompt';
+              btn.classList.remove('btn-copied');
+            }, 2000);
+          });
         });
+      })();
+      </script>
 
-      document.getElementById('copy-prompt-btn').addEventListener('click', function () {
-        var btn = this;
-        var content = document.getElementById('prompt-content').textContent;
-        navigator.clipboard.writeText(content).then(function () {
-          btn.textContent = 'Copied!';
-          btn.classList.add('btn-copied');
-          setTimeout(function () {
-            btn.textContent = 'Copy prompt';
-            btn.classList.remove('btn-copied');
-          }, 2000);
-        }).catch(function () {
-          // Fallback for older browsers
-          var textarea = document.createElement('textarea');
-          textarea.value = content;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textarea);
-          btn.textContent = 'Copied!';
-          btn.classList.add('btn-copied');
-          setTimeout(function () {
-            btn.textContent = 'Copy prompt';
-            btn.classList.remove('btn-copied');
-          }, 2000);
-        });
-      });
-    })();
-    </script>
+      <details class="tool-details">
+        <summary>Important &mdash; please read before using</summary>
+        <p>This prompt has <strong>not been extensively tested</strong>. It is free to use and I genuinely hope it helps families who are struggling. But I take no responsibility for the output failing to get your EHCNA request approved. Every child is different, every local authority is different, and the outcome depends on many factors beyond what any tool can control.</p>
+        <p>I am just one Mum to another family in need, using my software engineering and AI skills to try to help others out &mdash; applying the processes I know to the problems we all face.</p>
+      </details>
 
-    <div class="highlight">
-      <p><strong>Important &mdash; please read:</strong></p>
-      <p>This prompt has <strong>not been extensively tested</strong>. It is free to use and I genuinely hope it helps families who are struggling. But I take no responsibility for the output failing to get your EHCNA request approved. Every child is different, every local authority is different, and the outcome depends on many factors beyond what any tool can control.</p>
-      <p>I am just one Mum to another family in need, using my software engineering and AI skills to try to help others out &mdash; applying the processes I know to the problems we all face.</p>
-    </div>
+      <details class="tool-details">
+        <summary>Where this prompt comes from</summary>
+        <p>This prompt was designed from my own unique lived experiences. My child is intelligent, socially driven, and highly masking &mdash; with what is clearly ADHD alongside autism and sensory processing differences, all hiding each other. Nothing particularly typical in presentation or diagnosis. Confusing, and that is exactly why it has been so hard. Violence at home. Once at school, fine &mdash; but incredibly difficult to get him there from the very beginning, and by Year 3, too big and strong to fight his survival mode. A fizzy coke bottle child. Read the <a href="/out-loud.html">articles</a> if you want to understand what that really looks like.</p>
+        <p>Because this prompt comes from one family&rsquo;s experience, <strong>it may not generalise perfectly to every situation</strong>. But the structure is sound, the legal grounding is solid, and the approach of telling your story through evidence is universal.</p>
+      </details>
 
-    <div class="highlight">
-      <p><strong>Where this prompt comes from:</strong></p>
-      <p>This prompt was designed from my own unique lived experiences. My child is intelligent, socially driven, and highly masking &mdash; with what is clearly ADHD alongside autism and sensory processing differences, all hiding each other. Nothing particularly typical in presentation or diagnosis. Confusing, and that is exactly why it has been so hard. Violence at home. Once at school, fine &mdash; but incredibly difficult to get him there from the very beginning, and by Year 3, too big and strong to fight his survival mode. A fizzy coke bottle child. Read the <a href="/out-loud.html">articles</a> if you want to understand what that really looks like.</p>
-      <p>Because this prompt comes from one family&rsquo;s experience, <strong>it may not generalise perfectly to every situation</strong>. But the structure is sound, the legal grounding is solid, and the approach of telling your story through evidence is universal.</p>
-    </div>
-
-    <div class="warning">
-      <p><strong>Feedback welcome:</strong> Please send feedback &mdash; good or bad &mdash; to <a href="mailto:neurodiversity.debugged@gmail.com">neurodiversity.debugged@gmail.com</a>. Tell me what worked, what did not, what was missing. I can incorporate it and make this better for the next family.</p>
+      <div class="warning">
+        <p><strong>Feedback welcome:</strong> Please send feedback &mdash; good or bad &mdash; to <a href="mailto:neurodiversity.debugged@gmail.com">neurodiversity.debugged@gmail.com</a>. Tell me what worked, what did not, what was missing. I can incorporate it and make this better for the next family.</p>
+      </div>
     </div>
 
     <h2 id="never-used-ai">Never used AI before?</h2>
