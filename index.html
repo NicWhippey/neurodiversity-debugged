@@ -73,8 +73,11 @@
             var imgUrl = (item.thumbnail || (imgMatch && imgMatch[1]) || '');
             var imgHtml = imgUrl ? '<img src="' + imgUrl + '" alt="">' : '';
 
-            var subMatch = item.description ? item.description.match(/<h3[^>]*>(.*?)<\/h3>/) : null;
-            var subtitle = subMatch ? subMatch[1].replace(/<[^>]+>/g, '') : '';
+            // Extract first <p> text as subtitle (more reliable than h3 from Medium feed)
+            var subMatch = item.description ? item.description.match(/<p[^>]*>(.*?)<\/p>/) : null;
+            var subtitle = subMatch ? subMatch[1].replace(/<[^>]+>/g, '').trim() : '';
+            // Truncate long subtitles
+            if (subtitle.length > 150) subtitle = subtitle.substring(0, 147) + '...';
             var subHtml = subtitle ? '<p>' + subtitle + '</p>' : '';
 
             return '<a class="article-card" href="' + item.link + '" target="_blank" rel="noopener">' +

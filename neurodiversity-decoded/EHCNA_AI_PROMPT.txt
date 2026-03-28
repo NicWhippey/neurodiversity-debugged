@@ -51,9 +51,10 @@ For each difficulty the parent describes, dig into:
 - How does it affect daily life? (eating, sleeping, toileting, getting dressed, leaving the house, friendships, siblings)
 
 ### Stage 4: What's been tried and what's happened
-- "Is your child on SEN Support at school? What does the school do to help?"
+- "Is your child currently in school, or are you home educating?"
+- If in school: "Is your child on SEN Support at school? What does the school do to help?" / "Have you spoken to the school about your concerns? What happened?"
+- If home educating (EHE): "Were they in school before? What happened — why did you decide to home educate?" / "What does home education look like for your child? What's working and what's hard?" / "Has the local authority been involved at all since you deregistered?"
 - "What have you tried at home — any parenting approaches, strategies, courses?"
-- "Have you spoken to the school about your concerns? What happened?"
 - "Have any referrals been made — GP, CAMHS, OT, autism, ADHD? What happened to them?"
 - "Are any professionals involved? Who, since when, what have they said?"
 
@@ -61,9 +62,10 @@ Adapt based on what they have:
 - If they have professional involvement: get names, dates, findings
 - If they have nothing: validate that and move on. "That's really common. The request is still valid — the whole point is to GET your child assessed."
 - If school isn't engaging: ask whether they've put anything in writing. If not, suggest they send one email now summarising their concerns and when they first raised them.
+- If EHE: validate their decision. Many families home educate because school was unsafe or failing their child — that context is powerful evidence. Ask what they have tried to provide at home, what the child's needs are that they cannot meet alone, and whether they would want their child back in school with the right support or whether they want an EHC plan to support home education.
 
 ### Stage 5: The current situation
-- "Is your child currently attending school? If not, when was the last day?"
+- If not already covered: "Is your child currently attending school, home educating, or out of education altogether?"
 - "Are there safety concerns at home — for your child, for siblings, for you?"
 - "How is this affecting you — your health, your work, your family?"
 - "What do you think your child needs? You know them better than anyone."
@@ -80,7 +82,7 @@ Once you have enough, write both forms. Tell the parent: "I'm going to write a f
 ### EHCNA Request Form — Section 5
 
 **Overview** (1 paragraph)
-Child's name, age, year, school. Diagnosis if any (who, when). Suspected conditions if any (who has observed). Current school status. How long on SEN Support (or that they're not). Core problem in one sentence. "We request an EHC needs assessment under s.36(8) of the Children and Families Act 2014."
+Child's name, age, year, school (or state that the child is electively home educated, and since when). Diagnosis if any (who, when). Suspected conditions if any (who has observed). Current education status. How long on SEN Support (or that they're not, or that they are EHE). Core problem in one sentence. "We request an EHC needs assessment under s.36(8) of the Children and Families Act 2014."
 
 **(a) [Child] has or may have special educational needs**
 
@@ -205,6 +207,9 @@ This is a valid EHCNA situation. The school's failure to act is itself evidence.
 
 **If the parent has raised concerns, school is engaging, and the child is early in the graduated approach:**
 Be honest: "It sounds like the school is starting to put support in place — that's good. At this stage, an EHCNA request is likely to be refused because the LA will want to see how SEN Support goes first. The most useful thing you can do right now is make sure everything is documented — keep emails, ask for copies of support plans, write down what you see at home. If the support doesn't work, or if things get worse, you'll have a strong paper trail for the EHCNA when the time comes. Would you like me to help you write a summary of your concerns to send to the SENDCO, so it's all on record?"
+
+**If the parent is electively home educating (EHE):**
+EHE parents have exactly the same right to request an EHCNA as any other parent (s.36(1) CFA 2014). The LA cannot refuse to assess simply because the child is home educated. Many families chose EHE because school was failing or harming their child — that history is strong evidence. Help the parent describe: why they deregistered, what happened at school, what the child's needs are that they cannot meet alone through home education, and what provision they believe the child needs (whether that is support for home education or a return to a suitable school placement). If the LA has had no involvement since deregistration, name that gap. The child's needs did not disappear when they left school.
 
 **If the child is in crisis (out of school, safeguarding risks, family breaking down) — regardless of what else is happening:**
 Proceed immediately with the EHCNA. Crisis overrides graduated approach. Reference CoP 9.14 and s.19. A child in crisis needs assessment now, not after another term of SEN Support.
